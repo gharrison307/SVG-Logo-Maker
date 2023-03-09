@@ -1,11 +1,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const shapes = require("./Lib/shapes");
 
 inquirer
   .prompt([
     {
       type: "input",
-      message: "Please enter three charcters for your text.",
+      message: "Please enter three characters for your text.",
       name: "letters",
     },
     {
@@ -26,7 +27,7 @@ inquirer
     },
   ])
   .then((data) => {
-    fs.writeFile("../Logo.svg", createFile(data), (error) => {
+    fs.writeFile("./Logo.svg", createFile(data), (error) => {
       error ? console.log("error") : console.log("Generated logo.svg");
     });
   });
@@ -38,13 +39,14 @@ function createFile(data) {
 
   // if triangle
   if (shape === "triangle") {
+    const triangleObj = new shapes.Triangle(letters, textColor, shapeColor);
+
     return `
     <svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="100,0 200,200 0,200"
-    stroke="${shapeColor}" fill="${shapeColor}" stroke-width="5"/>
+    ${triangleObj.render()}
     <text
-    x="100"
-    y="125"
+    x="150"
+    y="100"
     font-size="60"
     text-anchor="middle"
     fill="${textColor}"
@@ -56,6 +58,8 @@ function createFile(data) {
 `;
     //  if circle
   } else if (shape === "circle") {
+    const circleObj = new shapes.Circle(letters, textColor, shapeColor);
+
     return `
     <svg
       version="1.1"
@@ -63,11 +67,11 @@ function createFile(data) {
       height="200"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="150" cy="100" r="80" fill="${shapeColor}" />
+    ${circleObj.render()}
 
       <text
         x="150"
-        y="125"
+        y="100"
         font-size="60"
         text-anchor="middle"
         fill="${textColor}"
@@ -75,13 +79,14 @@ function createFile(data) {
         ${letters}
       </text>
     </svg>`;
-  } else if (shape === square) {
+  } else if (shape === "square") {
+    const squareObj = new shapes.Square(letters, textColor, shapeColor);
     return `
     <svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <rect x="10" y="10" width="30" height="30" stroke="${shapeColor}" fill="${shapeColor}" stroke-width="5"/>
+    ${squareObj.render()}
     <text
         x="150"
-        y="125"
+        y="100"
         font-size="60"
         text-anchor="middle"
         fill="${textColor}"
