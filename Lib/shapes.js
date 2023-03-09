@@ -1,9 +1,4 @@
-// The application must include Triangle, Circle, and Square classes, as well as tests for each of these classes using Jest. While not a requirement, it is recommended that you place any common functionality and properties shared by the Triangle, Circle, and Square classes in a parent Shape class and use inheritance to reuse the code in the child classes.
-
-// Each shape class should be tested for a render() method that returns a string for the corresponding SVG file with the given shape color.
-
-// parent Shape class
-
+// Parent Shape class
 class Shape {
   constructor(letters, textColor, shapeColor) {
     this.letters = letters;
@@ -12,7 +7,7 @@ class Shape {
   }
 }
 
-// child circle class
+// Child Circle class
 class Circle extends Shape {
   constructor(letters, textColor, shapeColor) {
     super(letters, textColor, shapeColor);
@@ -22,7 +17,7 @@ class Circle extends Shape {
   }
 }
 
-// child square class
+// Child Square class
 class Square extends Shape {
   constructor(letters, textColor, shapeColor) {
     super(letters, textColor, shapeColor);
@@ -32,7 +27,7 @@ class Square extends Shape {
   }
 }
 
-// child triangle class
+// Child Triangle class
 class Triangle extends Shape {
   constructor(letters, textColor, shapeColor) {
     super(letters, textColor, shapeColor);

@@ -3,6 +3,7 @@ const shapes = require("./shapes");
 // Each shape class should be tested for a render() method that returns a string for the corresponding SVG file with the given shape color.
 
 describe("Shape Tests", () => {
+  // Triangle test
   describe("Triangle", () => {
     it("should produce a string of text", () => {
       // arrange step - set up variables for your test
@@ -11,6 +12,7 @@ describe("Shape Tests", () => {
 
       const testString = `<polygon points="100,0 200,200 0,200" stroke="${shapeColor}" fill="${shapeColor}"/>`;
 
+      // act step -where you excecute code
       const triangleObj = new shapes.Triangle("FUN", "blue", shapeColor);
 
       // asses step = check that the values meet certaion conditions
@@ -19,6 +21,7 @@ describe("Shape Tests", () => {
     });
   });
 
+  //   Circle Test
   describe("Circle", () => {
     it("should produce a string of text", () => {
       // arrange step - set up variables for your test
@@ -35,6 +38,7 @@ describe("Shape Tests", () => {
     });
   });
 
+  //   Square Test
   describe("Square", () => {
     it("should produce a string of text", () => {
       // arrange step - set up variables for your test

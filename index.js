@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const shapes = require("./Lib/shapes");
 
+// Inquirer Function
 inquirer
   .prompt([
     {
@@ -45,8 +46,8 @@ function createFile(data) {
     <svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
     ${triangleObj.render()}
     <text
-    x="150"
-    y="100"
+    x="100"
+    y="150"
     font-size="60"
     text-anchor="middle"
     fill="${textColor}"
@@ -71,7 +72,7 @@ function createFile(data) {
 
       <text
         x="150"
-        y="100"
+        y="120"
         font-size="60"
         text-anchor="middle"
         fill="${textColor}"
@@ -79,6 +80,8 @@ function createFile(data) {
         ${letters}
       </text>
     </svg>`;
+
+    // if square
   } else if (shape === "square") {
     const squareObj = new shapes.Square(letters, textColor, shapeColor);
     return `
