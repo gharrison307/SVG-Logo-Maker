@@ -1,14 +1,14 @@
 
     <svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <rect x="10" y="10" width="300" height="200" stroke="blue" fill="blue" stroke-width="5"/>
+    <rect x="10" y="10" width="300" height="200" stroke="red" fill="red" stroke-width="5"/>
     <text
         x="150"
         y="100"
         font-size="60"
         text-anchor="middle"
-        fill="Green"
+        fill="blue"
       >
-        GUA
+        GAH
       </text>
 
     </svg>

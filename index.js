@@ -28,7 +28,7 @@ inquirer
     },
   ])
   .then((data) => {
-    fs.writeFile("./Logo.svg", createFile(data), (error) => {
+    fs.writeFile("./examples/logo.svg", createFile(data), (error) => {
       error ? console.log("error") : console.log("Generated logo.svg");
     });
   });
